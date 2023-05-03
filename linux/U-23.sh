@@ -62,7 +62,7 @@ else
 	for i in 'ls /etc/inetd.conf*'
 	do
 		if grep -qE "echo|discard|daytime|chargen" /etc/inetd.conf; then
-			if ! grep -qE '^#.*rsh|^#.*rlogin|^#.*rexec|^rsh|^rlogin|^rexec' /etc/inetd.conf
+			if ! grep -qE '^#.*rsh|^#.*rlogin|^#.*rexec|^rsh|^rlogin|^rexec' /etc/inetd.conf ; then
 				echo -e "서비스 관리,U-23,DOS 공격에 취약한 서비스 비활성화,상,양호" >> linux_report.csv
 			else
 				echo -e "서비스 관리,U-23,DOS 공격에 취약한 서비스 비활성화,상,취약" >> linux_report.csv

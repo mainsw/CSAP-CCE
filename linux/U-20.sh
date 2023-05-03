@@ -1,18 +1,25 @@
 #!/bin/bash
 
-file_paths=("/etc/xinetd.d/finger" "/etc/inetd.conf")
+if [ -f /etc/xinetd.d/finger ]; then
+	if [ "$(cat /etc/xinetd.d/finger | grep disable | awk '{print $3}')" = "yes" ]; then
+		echo  "서비스 관리,U-20,Finger 서비스 비활성화,상,양호" >> linux_report.csv
+	else
+		echo  "서비스 관리,U-20,Finger 서비스 비활성화,상,취약" >> linux_report.csv
+	fi
+exit
+fi
 
-for file_path in "${file_paths[@]}"; do
-  if [ -f "$file_path" ]; then
-    
-    service_enabled=$(grep "disable" $file_path | awk '{print $3}')
+if [ -f /etc/inetd.conf ]; then
+	if grep -qE "finger" /etc/inetd.conf; then
+		if ! grep -qE '^#.*finger|^finger' /etc/inetd.conf; then
+			echo -e "서비스 관리,U-23,DOS 공격에 취약한 서비스 비활성화,상,양호" >> linux_report.csv
+		else
+			echo -e "서비스 관리,U-23,DOS 공격에 취약한 서비스 비활성화,상,취약" >> linux_report.csv
+		fi
+	fi
+exit
+fi
 
-    if [ "$service_enabled" = "yes" ]; then
-      status="양호"
-    else
-      status="취약"
-    fi
-    message="$file_path: finger 서비스 상태-$status"
-  fi
-done
-echo -e "서비스 관리,U-20,Finger 서비스 비활성화,상,$status" >> linux_report.csv
+if [ ! -f "/etc/xinetd.d/finger" ] && [ ! -f "/etc/inetd.conf" ]; then
+	echo  "서비스 관리,U-20,Finger 서비스 비활성화,상,파일 존재X" >> linux_report.csv
+fi

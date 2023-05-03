@@ -15,4 +15,4 @@
 #4) 기본적 log 파일의 위치는 /var/dam, /var/log
 
 
-echo "패치 및 로그관리,U-36,로그의 정기적 검토 및 보고,상,$result" >> linux_report.csv
+echo "패치 및 로그관리,U-36,로그의 정기적 검토 및 보고,상,N/A" >> linux_report.csv

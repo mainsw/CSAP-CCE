@@ -17,4 +17,4 @@ https://github.com/mainsw/CSAP-CCE/blob/main/linux/U-35.sh
 #3) Update 설치 
 # # rpm -Uvh <pakage-name>
 
-echo "패치 및 로그관리,U-35,최신 보안패치 및 벤더 권고사항 적용,상,수동점검" >> linux_report.csv
+echo "패치 및 로그관리,U-35,최신 보안패치 및 벤더 권고사항 적용,상,N/A" >> linux_report.csv

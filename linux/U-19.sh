@@ -9,5 +9,4 @@ else
   crontab_status="취약"
 fi
 
-echo -e "구분,진단코드,진단항목,취약도,점검결과" > linux_report.csv
 echo -e "파일 및 디렉토리 관리,U-19,cron 파일 소유자 및 권한 설정,상,$crontab_status" >> linux_report.csv

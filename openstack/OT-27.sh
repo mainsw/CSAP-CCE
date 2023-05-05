@@ -5,7 +5,7 @@ manila_conf_path="/etc/manila/manila.conf"
 
 # manila.conf 파일이 없는 경우
 if [ ! -f "$manila_conf_path" ]; then
-  echo "암호화,OT-27,TLS를 이용한 공유 파일 시스템과 블록 스토리지 서비스와의 연결,상,파일존재X" >> openstack_report.csv
+  echo "암호화,OT-27,TLS를 이용한 공유 파일 시스템과 블록 스토리지 서비스와의 연결,상,N/A" >> openstack_report.csv
   exit
 fi
 

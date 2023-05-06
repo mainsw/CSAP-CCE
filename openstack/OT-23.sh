@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -f "/etc/glance/glance-api.conf" ]; then
-  echo "암호화,OT-23,이미지 스토리지 서비스 인증을 위한 TLS 활성화,상,파일 존재 X" >> openstack_report.csv
+  echo "암호화,OT-23,이미지 스토리지 서비스 인증을 위한 TLS 활성화,상,N/A" >> openstack_report.csv
 exit
 fi
 

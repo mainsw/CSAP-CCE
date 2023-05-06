@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -d "/etc/manila" ]; then
-  echo "암호화,OT-25,TLS를 이용한 공유 파일 시스템과 Compute 통신,상,파일 존재 X" >> openstack_report.csv
+  echo "암호화,OT-25,TLS를 이용한 공유 파일 시스템과 Compute 통신,상,N/A" >> openstack_report.csv
 exit
 fi
 

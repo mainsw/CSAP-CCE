@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -d "/etc/manila" ]; then
-  echo "암호화,OT-24,공유 파일 시스템 인증을 위한 TLS 활성화,상,파일 존재 X" >> openstack_report.csv
+  echo "암호화,OT-24,공유 파일 시스템 인증을 위한 TLS 활성화,상,N/A" >> openstack_report.csv
   exit
 fi
 

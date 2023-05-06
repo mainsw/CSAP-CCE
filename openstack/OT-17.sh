@@ -19,6 +19,6 @@ exit
 fi
 
 if [ ! -f "/etc/openstack-dashboard/local_settings" ] && [ ! -f "/etc/openstack-dashboard/local_settings.py" ]; then
-	echo "암호화,OT-17,Dashboard의 SECURE_PROXY_SSL_HEAEDER 설정,상,파일 존재 X" >> openstack_report.csv
+	echo "암호화,OT-17,Dashboard의 SECURE_PROXY_SSL_HEAEDER 설정,상,N/A" >> openstack_report.csv
 exit
 fi

@@ -12,9 +12,9 @@ fi
 if [ -f /etc/inetd.conf ]; then
 	if grep -qE "finger" /etc/inetd.conf; then
 		if ! grep -qE '^#.*finger|^finger' /etc/inetd.conf; then
-			echo -e "서비스 관리,U-23,DOS 공격에 취약한 서비스 비활성화,상,양호" >> linux_report.csv
+			echo -e "서비스 관리,U-20,Finger 서비스 비활성화,상,양호" >> linux_report.csv
 		else
-			echo -e "서비스 관리,U-23,DOS 공격에 취약한 서비스 비활성화,상,취약" >> linux_report.csv
+			echo -e "서비스 관리,U-20,Finger 서비스 비활성화,상,취약" >> linux_report.csv
 		fi
 	fi
 exit

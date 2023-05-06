@@ -7,6 +7,7 @@ if [ -f "/etc/passwd" ]; then
     else
         echo "서비스 관리,U-21,Anonymous FTP 비활성화,상,양호" >> linux_report.csv
     fi
+exit
 fi
 
 # /etc/proftpd/proftpd.conf 파일 확인
@@ -16,6 +17,7 @@ if [ -f "/etc/proftpd/proftpd.conf" ]; then
     else
         echo "서비스 관리,U-21,Anonymous FTP 비활성화,상,양호" >> linux_report.csv
     fi
+exit
 fi
 
 # /etc/vsftpd/vsftpd.conf 파일 확인		
@@ -25,4 +27,9 @@ if [ -f "/etc/vsftpd/vsftpd.conf" ]; then
     else
         echo "서비스 관리,U-21,Anonymous FTP 비활성화,상,양호" >> linux_report.csv
     fi
+exit
+fi
+
+if [ ! -f "/etc/passwd" ] && [ ! -f "/etc/proftpd/proftpd.conf" ] && [ ! -f "/etc/vsftpd/vsftpd.conf" ]; then
+	echo  "서비스 관리,U-21,Anonymous FTP 비활성화,상,파일 존재X" >> linux_report.csv
 fi

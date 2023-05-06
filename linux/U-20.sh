@@ -21,5 +21,5 @@ exit
 fi
 
 if [ ! -f "/etc/xinetd.d/finger" ] && [ ! -f "/etc/inetd.conf" ]; then
-	echo  "서비스 관리,U-20,Finger 서비스 비활성화,상,파일 존재X" >> linux_report.csv
+	echo  "서비스 관리,U-20,Finger 서비스 비활성화,상,N/A" >> linux_report.csv
 fi

@@ -31,5 +31,5 @@ exit
 fi
 
 if [ ! -f "/etc/passwd" ] && [ ! -f "/etc/proftpd/proftpd.conf" ] && [ ! -f "/etc/vsftpd/vsftpd.conf" ]; then
-	echo  "서비스 관리,U-21,Anonymous FTP 비활성화,상,파일 존재X" >> linux_report.csv
+	echo  "서비스 관리,U-21,Anonymous FTP 비활성화,상,N/A" >> linux_report.csv
 fi

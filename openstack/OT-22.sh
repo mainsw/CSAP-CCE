@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ ! -f "/etc/nova/nova.conf" ]; then
+  echo "암호화,OT-22,cinder와 glance의 TLS 통신,상,파일 존재 X" >> openstack_report.csv
+exit
+fi
+
 glance_api_servers=$(grep -Po "(?<=^\[DEFAULT\]\nglance_api_servers = ).*" /etc/nova/nova.conf)
 
 if [[ $glance_api_servers == https://* ]]; then

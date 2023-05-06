@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -d "/etc/keystone" ]; then
-  echo "암호화,OT-16,PKI토근의 강력한 해시 알고리즘 사용,상,파일 존재 X" >> openstack_report.csv
+  echo "암호화,OT-16,PKI토근의 강력한 해시 알고리즘 사용,상,N/A" >> openstack_report.csv
 exit
 fi
 

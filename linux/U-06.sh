@@ -8,7 +8,7 @@ path_value=$(echo $PATH)
 if [[ $path_value == *.:* || $path_value == *:.* || $path_value == .* ]]; then
     result="취약"
 else
-    result="양호"
+    result="양호" 
 fi
 
 # 결과를 csv 파일에 저장

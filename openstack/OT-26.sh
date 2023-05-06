@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # manila.conf 파일 경로
-manila_conf="/etc/manila/manila.conf"
+manila_conf="/etc/manila/manila.conf" 
 
 # manila.conf 파일이 없는 경우
 if [ ! -f "$manila_conf" ]; then

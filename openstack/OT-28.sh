@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -f "/etc/neutron/neutron.conf" ]; then
-  echo "암호화,OT-28,네트워킹 서비스의 인증을 위한 안전한 프로토콜 사용,상,파일 존재 X" >> openstack_report.csv
+  echo "암호화,OT-28,네트워킹 서비스의 인증을 위한 안전한 프로토콜 사용,상,N/A" >> openstack_report.csv
 exit
 fi
 

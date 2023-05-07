@@ -50,6 +50,7 @@ if [  -d "/etc/xinetd.d" ]; then
 	else
   	echo  "서비스 관리,U-22,r 계열 서비스 비활성화,상,취약" >> linux_report.csv
 	fi
+exit
 fi
 
 
@@ -71,4 +72,5 @@ if [ ! -d "/etc/xinetd.d" ]; then
 			fi
 		done
 	fi
+exit
 fi

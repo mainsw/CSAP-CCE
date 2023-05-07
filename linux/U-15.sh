@@ -1,5 +1,7 @@
 #!/bin/bash
 result="양호"
+not_found="N/A"
+
 # 사용자 및 시스템 시작 파일, 환경 파일 검사
 for dir in /etc/profile.d /etc/bashrc /etc/csh.cshrc /etc/csh.login /etc/csh.logout /etc/profile /etc/bash.bashrc /etc/environment /etc/security/limits.conf /etc/sysctl.conf /home/*
 do
@@ -19,6 +21,8 @@ do
         break 2
       fi
     done
+  else
+      result="$not_found"
   fi
 done
 

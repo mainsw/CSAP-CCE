@@ -2,7 +2,7 @@ export LANG=ko_KR.UTF-8
 #!/bin/bash
 
 # etc/glance 존재하지 않을 시 N/A 처리
-if [ ! -e "/etc/glance" ]; then
+if [ ! -e "/etc/glance/glance-api.conf" ] || [ ! -e "/etc/glance/glance-registry.conf" ]; then
   echo "보안설정,OT-45,이미지 스토리지 서비스 인증을 위한 keystone 설정,상,N/A">> openstack_report.csv
   exit 1
 fi

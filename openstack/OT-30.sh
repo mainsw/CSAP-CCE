@@ -1,6 +1,8 @@
 export LANG=ko_KR.UTF-8
 #!/bin/bash
 
+echo "구분,진단코드,진단항목,취약도,점검결과"> openstack_report.csv
+
 # /etc/keystone/keystone.conf 존재하지 않을 시 N/A 처리
 if [ ! -e "/etc/keystone/keystone.conf" ]; then
 	echo "보안설정,OT-30,Identity 서비스 max_request_body_size 설정,상,N/A">> openstack_report.csv

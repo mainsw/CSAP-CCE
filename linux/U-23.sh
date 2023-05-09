@@ -63,7 +63,6 @@ if [  -d "/etc/xinetd.d" ]; then
 	else
   	echo -e "서비스 관리,U-23,DOS 공격에 취약한 서비스 비활성화,상,취약" >> linux_report.csv
 	fi
-exit
 fi
 
 

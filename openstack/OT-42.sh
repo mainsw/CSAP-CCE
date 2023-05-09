@@ -2,7 +2,7 @@ export LANG=ko_KR.UTF-8
 #!/bin/bash
 
 # etc/cinder/cinder.conf 존재하지 않을 시 N/A 처리
-if [ ! -e "etc/cinder/cinder.conf" ]; then
+if [ ! -e "/etc/cinder/cinder.conf" ]; then
   echo "보안설정,OT-42,안전한 환경에서의 NAS 운영,상,N/A" >> openstack_report.csv
   exit 1
 fi

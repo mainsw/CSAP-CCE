@@ -2,7 +2,7 @@ export LANG=ko_KR.UTF-8
 #!/bin/bash
 
 # etc/openstack-dashboard 존재하지 않을 시 N/A 처리
-if [ ! -e "etc/openstack-dashboard" ]; then
+if [ ! -e "/etc/openstack-dashboard" ]; then
   echo "보안설정,OT-39,Dashboard의 PASSWORD_VALIDATOR 설정,상,N/A">> openstack_report.csv
   exit 1
 fi

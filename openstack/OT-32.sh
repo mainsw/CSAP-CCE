@@ -7,7 +7,7 @@ if [ ! -e "etc/openstack-dashboard" ]; then
   exit 1
 fi
 
-if [ -f /etc/openstack-dashboard/local_settings.py ] ; then
+if [ -f "/etc/openstack-dashboard/local_settings.py" ] ; then
 	cat /etc/openstack-dashboard/local_settings.py | grep -i "DISALLOW_IFRAME_EMBED" >/dev/null 2>&1
 	if [ $? -ne 0 ] ; then
 		# /etc/openstack-dashboard/local_settings.py 파일에서 DISALLOW_IFRAME_EMBED 매개변수가 True로 되어 잇는 경우

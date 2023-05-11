@@ -4,7 +4,7 @@ CODE="U-10"
 VULN=false
 
 # /etc/hosts가 없는 경우 비정상 종료
-if [[ ! -e "/etc/shadow" ]]; then
+if [[ ! -e "/etc/hosts" ]]; then
     echo "[$CODE] N/A: /etc/hosts does not exist."
 		if [ -e "linux_report.csv" ]; then
 			echo "파일 및 디렉토리 관리,$CODE,/etc/hosts 파일 소유자 및 권한 설정,상,N/A" >> linux_report.csv

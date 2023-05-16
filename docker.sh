@@ -7,5 +7,5 @@ scripts=(
 # 배열에 추가한 스크립트 파일들을 차례대로 실행
 for script in "${scripts[@]}"
 do
-    bash "./mysql/$script"
+    bash "./docker/$script"
 done

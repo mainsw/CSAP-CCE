@@ -7,5 +7,5 @@ scripts=(U-01.sh U-02.sh U-03.sh U-04.sh U-05.sh U-06.sh U-07.sh U-08.sh U-09.sh
 for script in "${scripts[@]}"
 do
     bash "./linux/$script"
-    echo "[$script] has been executed."
+    echo "[$script] execution completed."
 done

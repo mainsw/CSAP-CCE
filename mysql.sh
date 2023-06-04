@@ -10,5 +10,5 @@ export pass
 for script in "${scripts[@]}"
 do
     bash "./mysql/$script"
-    echo "[$script] has been executed."
+    echo "[$script] execution completed."
 done

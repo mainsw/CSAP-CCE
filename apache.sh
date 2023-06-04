@@ -7,5 +7,5 @@ scripts=(AP-01.sh AP-02.sh AP-03.sh AP-04.sh AP-05.sh AP-06.sh)
 for script in "${scripts[@]}"
 do
     bash "./apache/$script"
-    echo "[$script] has been executed."
+    echo "[$script] execution completed."
 done

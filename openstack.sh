@@ -7,5 +7,5 @@ scripts=(OT-01.sh OT-02.sh OT-03.sh OT-04.sh OT-05.sh OT-06.sh OT-07.sh OT-08.sh
 for script in "${scripts[@]}"
 do
     bash "./openstack/$script"
-    echo "[$script] has been executed."
+    echo "[$script] execution completed."
 done

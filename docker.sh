@@ -7,4 +7,5 @@ scripts=(DO-01.sh DO-02.sh DO-03.sh DO-04.sh DO-05.sh DO-06.sh DO-07.sh DO-08.sh
 for script in "${scripts[@]}"
 do
     bash "./docker/$script"
+    echo "[$script] has been executed."
 done

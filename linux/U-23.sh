@@ -57,6 +57,7 @@ else
 		fi
 	done
 fi
+
 if [  -d "/etc/xinetd.d" ]; then
 	if [[ $resultA == "취약" || $resultB == "취약" || $resultC == "취약" || $resultD == "취약" ]]; then
   	echo -e "서비스 관리,U-23,DOS 공격에 취약한 서비스 비활성화,상,양호" >> linux_report.csv
@@ -67,23 +68,27 @@ exit
 fi
 
 
-if [ ! -d "/etc/xinetd.d" ]; then
-	ls /etc/inetd.conf* >/dev/null 2>&1
-	if  [ $? != 0 ] ; then 
-		echo ''
-	else
-		for i in 'ls /etc/inetd.conf*'
-		do
-			if grep -qE "echo|discard|daytime|chargen" /etc/inetd.conf; then
-				if ! grep -qE '^#.*rsh|^#.*rlogin|^#.*rexec|^rsh|^rlogin|^rexec' /etc/inetd.conf 
-					echo -e "서비스 관리,U-23,DOS 공격에 취약한 서비스 비활성화,상,양호" >> linux_report.csv
-				else
-					echo -e "서비스 관리,U-23,DOS 공격에 취약한 서비스 비활성화,상,취약" >> linux_report.csv
-				fi
-			else
+ls /etc/inetd.conf* >/dev/null 2>&1
+if  [ $? != 0 ] ; then 
+	echo ''
+else
+	for i in 'ls /etc/inetd.conf*'
+	do
+		if grep -qE "echo|discard|daytime|chargen" /etc/inetd.conf; then
+			if ! grep -qE '^#.*rsh|^#.*rlogin|^#.*rexec|^rsh|^rlogin|^rexec' /etc/inetd.conf; then
 				echo -e "서비스 관리,U-23,DOS 공격에 취약한 서비스 비활성화,상,양호" >> linux_report.csv
+			else
+				echo -e "서비스 관리,U-23,DOS 공격에 취약한 서비스 비활성화,상,취약" >> linux_report.csv
 			fi
-		done
-	fi
+		else
+			echo -e "서비스 관리,U-23,DOS 공격에 취약한 서비스 비활성화,상,양호" >> linux_report.csv
+		fi
+	done
+exit
+fi
+
+
+if [ ! -d "/etc/xinetd.d" ] && [ ! -f "/etc/inetd.conf" ] ; then
+	echo  "서비스 관리,U-23,DOS 공격에 취약한 서비스 비활성화,상,N/A" >> linux_report.csv
 exit
 fi

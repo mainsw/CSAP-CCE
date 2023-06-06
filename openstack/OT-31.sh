@@ -2,7 +2,7 @@ export LANG=ko_KR.UTF-8
 #!/bin/bash
 
 # /etc/keystone/keystone.conf나 /etc/keystone/keystone-paste.ini 존재하지 않을 시 N/A 처리
-if [ ! -e "/etc/keystone/keystone.conf" ] [ ! -e "/etc/keystone/keystone-paste.ini" ] ; then
+if [ ! -e "/etc/keystone/keystone.conf" ] || [ ! -e "/etc/keystone/keystone-paste.ini" ] ; then
   echo "보안설정,OT-31,admin 토큰 비활성화,상,N/A">> openstack_report.csv
   exit 1
 fi

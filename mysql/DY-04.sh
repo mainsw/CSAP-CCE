@@ -1,7 +1,7 @@
 #!/bin/bash
-
+ 
 # mysql.user 테이블 접근이 가능한 사용자 조회
-user_access=$(mysql -u root -p -e "SELECT user FROM mysql.user WHERE user='root';" | grep -o 'root')
+user_access=$(mysql -u root -p$pass -e "SELECT user FROM mysql.user WHERE user='root';" | grep -o 'root')
 
 # 해당 사용자가 존재하면 권한을 확인
 if [ "$user_access" == "root" ]; then
@@ -19,5 +19,7 @@ else
 fi
  
 # 결과를 csv 파일에 저장
-echo "구분,진단코드,진단항목,취약도,점검결과" > my-sql_report.csv
+
+
+# 결과를 csv 파일에 저장
 echo "계정관리,DY-04,DB 사용자 계정 정보 테이블 접근 권한,중,$result" >> my-sql_report.csv

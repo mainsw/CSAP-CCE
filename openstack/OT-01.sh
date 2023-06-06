@@ -12,10 +12,26 @@ FILES=( "/etc/keystone/keystone.conf" \
 OWNER="keystone"
 GROUP="keystone"
 VULN=false
+found_file=false
 
-# 검사할 파일이 없는 경우
-if [[ ! -e "${FILES[0]}" && ! -e "${FILES[1]}" ]]; then
-    echo "[OT-01] Failed: No files to check."
+# 검사 파일 존재 확인
+for file in "${FILES[@]}"; do
+    if [[ -e "$file" ]]; then
+        found_file=true
+        break
+    fi
+done
+
+if [[ "$found_file" == false ]]; then
+    echo "[OT-01] N/A: No files to check."
+		if [ -e "openstack_report.csv" ]; then
+			echo "파일 권한 관리,OT-01,Identity 설정파일 소유권 설정,상,N/A" >> openstack_report.csv
+			echo "[OT-01] Report generated."
+		else
+			echo "구분,진단 코드,진단 항목,취약도,점검 결과" > openstack_report.csv
+			echo "파일 권한 관리,OT-01,Identity 설정파일 소유권 설정,상,N/A" >> openstack_report.csv
+			echo "[OT-01] Report generated."
+		fi
     exit 1
 fi
 

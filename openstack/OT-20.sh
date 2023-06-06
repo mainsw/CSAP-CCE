@@ -11,5 +11,5 @@ else
 fi
 
 #결과를 csv 파일에 저장합니다
-echo "구분,진단코드,진단항목,취약도,점검결과" > openstack_report.csv
+
 echo "암호화,OT-20,블록 스토리지 서비스 인증을 위한 TLS 활성화,상,$result" >> openstack_report.csv

@@ -44,7 +44,7 @@ else
 	done
 fi
 
-if [ -d "/etc/xinetd.d" ]; then
+if [  -d "/etc/xinetd.d" ]; then
 	if [[ $resultA == "취약" || $resultB == "취약" || $resultC == "취약" ]]; then
   	echo "서비스 관리,U-22,r 계열 서비스 비활성화,상,양호" >> linux_report.csv
 	else
@@ -70,5 +70,8 @@ else
 		fi
 	done
 fi
+
+if [ ! -d "/etc/xinetd.d" ] && [ ! -f "/etc/inetd.conf" ] ; then
+	echo  "서비스 관리,U-22,r 계열 서비스 비활성화,상,N/A" >> linux_report.csv
 exit
 fi

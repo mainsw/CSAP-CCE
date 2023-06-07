@@ -10,7 +10,7 @@ HOSTNAME=$(hostname)
 #  hostname 된 디렉토리에서 'everyone' 문자열이 있는 줄수
 CHECK2=$(showmount -e $HOSTNAME | grep everyone | wc -l)
 
-if [ $CHECK1 == 'disabled' ] || [ $CHECK2 = 0 ]; then
+if [ "$CHECK1" == 'disabled' ] || [ $CHECK2 = 0 ]; then
 	# NFS 서비스 사용 시 everyone 공유를 제한한 경우
 	echo "서비스 관리,U-25,NFS 접근통제,상,양호">> linux_report.csv
 else

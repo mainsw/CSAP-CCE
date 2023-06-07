@@ -12,7 +12,7 @@ TMP2=$(cat /etc/cinder/cinder.conf | grep -i "nas_secure_file_operations" | awk 
 if [ $TMP1 == 'auto' ] ; then
 	if [ $TMP2 == 'auto' ] ; then
 		echo "보안설정,OT-42,안전한 환경에서의 NAS 운영,상,양호">> openstack_report.csv
-else
-	echo "보안설정,OT-42,안전한 환경에서의 NAS 운영,상,취약">> openstack_report.csv
+	else
+		echo "보안설정,OT-42,안전한 환경에서의 NAS 운영,상,취약">> openstack_report.csv
 fi
 fi

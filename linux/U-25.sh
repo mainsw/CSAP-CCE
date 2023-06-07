@@ -7,13 +7,12 @@ if showmount -e localhost &>/dev/null; then
 	HOSTNAME=$(hostname)
 	#  hostname 된 디렉토리에서 'everyone' 문자열이 있는 줄수
 	CHECK2=$(showmount -e $HOSTNAME | grep everyone | wc -l)
-
 	if [ $CHECK1 == 'disabled' ] || [ $CHECK2 = 0 ]; then
 		echo "서비스 관리,U-25,NFS 접근통제,상,양호">> linux_report.csv
 	else	
 		echo "서비스 관리,U-25,NFS 접근통제,상,취약">> linux_report.csv
+	fi
 else
 	echo "서비스 관리,U-25,NFS 접근통제,상,N/A">> linux_report.csv
   	exit 1
-fi
 fi

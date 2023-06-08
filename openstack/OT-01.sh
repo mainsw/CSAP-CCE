@@ -61,7 +61,7 @@ if [ -e "openstack_report.csv" ]; then
     echo "$REPORT" >> openstack_report.csv
     echo "[OT-01] Report generated."
 else
-    echo "구분,진단 코드,진단 항목,취약도,점검 결과" > openstack_report.csv
+    echo "구분,진단코드,진단항목,취약도,점검결과" > openstack_report.csv
     echo "$REPORT" >> openstack_report.csv
     echo "[OT-01] Report generated."
 fi

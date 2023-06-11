@@ -5,7 +5,7 @@ if [[ ! -e "/etc/securetty" ]]; then
 		if [ -e "linux_report.csv" ]; then
 			echo "계정관리,U-01,root 계정 원격 접속 제한,상,N/A" >> linux_report.csv
 		else
-			echo "구분,진단 코드,진단 항목,취약도,점검 결과" > linux_report.csv
+			echo "구분,진단코드,진단항목,취약도,점검결과" > linux_report.csv
 			echo "계정관리,U-01,root 계정 원격 접속 제한,상,N/A" >> linux_report.csv
 		fi
     exit 1

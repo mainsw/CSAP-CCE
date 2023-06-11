@@ -1,8 +1,5 @@
 #!/bin/bash
 
-allowed_ip="192.168.122.0"
-allowed_port="22"
-
 # /etc/hosts.deny 파일에 ALL: ALL 설정이 되어 있는지 확인
 if grep -q "^[[:space:]]*ALL[[:space:]]*:[[:space:]]*ALL[[:space:]]*$" /etc/hosts.deny; then
   result="취약"
@@ -14,7 +11,7 @@ else
   fi
   
   # 특정 호스트를 허용하는 iptables 규칙이 있는지 확인
-  if iptables -C INPUT -m state --state NEW -m tcp -p tcp -s $allowed_ip --dport $allowed_port -j ACCEPT &> /dev/null; then
+  if iptables -C INPUT -m state --state NEW -m tcp -p tcp -s $ip_number --dport $port_number -j ACCEPT &> /dev/null; then
     result="양호"
   else
     result="취약"

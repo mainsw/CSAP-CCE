@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # CSV 파일 경로
-csv_file="ip_port.csv"
+csv_file="$HOME/ip_port.csv"
 
 # CSV 파일 읽기
 while IFS=, read -r ip_number port_number; do

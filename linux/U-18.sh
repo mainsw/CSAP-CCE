@@ -3,6 +3,12 @@
 # CSV 파일 경로
 csv_file="$HOME/ip_port.csv"
 
+# CSV 파일 존재 확인
+if [ ! -f "$csv_file" ]; then
+  echo "파일 및 디렉토리 관리,U-18,접속 IP 및 포트 제한,상,N/A" >> linux_report.csv
+  exit 1
+fi
+
 # CSV 파일 읽기
 while IFS=, read -r ip_number port_number; do
   # /etc/hosts.deny 파일에 ALL: ALL 설정이 되어 있는지 확인

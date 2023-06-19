@@ -14,5 +14,7 @@ if [ $TMP1 == 'auto' ] ; then
 		echo "보안설정,OT-42,안전한 환경에서의 NAS 운영,상,양호">> openstack_report.csv
 	else
 		echo "보안설정,OT-42,안전한 환경에서의 NAS 운영,상,취약">> openstack_report.csv
-fi
+	fi
+else
+	echo "보안설정,OT-42,안전한 환경에서의 NAS 운영,상,N/A">> openstack_report.csv
 fi
